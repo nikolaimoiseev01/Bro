@@ -1,0 +1,80 @@
+// Body
+$body-bg: #131313;
+
+// Styles
+$header-height: 76px;
+$header-height_media_800: 60px;
+
+// Typography
+$h1-2-font-family: 'MachineC';
+$h3-font-family: 'Oswald';
+$p-font-family: 'Montserrat';
+$p-font-size: 16px;
+
+// COLORS
+$color-black-main: #131313;
+$color-black-light: #505050;
+
+$color-grey-main: #F6F6F6;
+$color-grey-light: #a6a6a6;
+
+$color-blue: #59B5E2;
+$color-pink: #C4A9CA;
+
+$color-brown: #342216;
+
+// MixIns
+
+@mixin flex($flex-direction: row, $align: center, $justify: center, $gap: 8px) {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+// Media
+
+$media-desktops-1200: 1200px;
+$media-laptops-1024: 1024px;
+$media-tablets-768: 768px;
+$media-mobiles-600: 600px;
+$media-mobiles-480: 480px;
+
+
+@mixin media-desktops-1200 {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin media-laptops-1024 {
+    @media (max-width: 1020px) {
+        @content;
+    }
+}
+
+@mixin media-tablets-768 {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin media-mobiles-600 {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+
+@mixin media-mobiles-480 {
+    @media (max-width: 480px) {
+        @content;
+    }
+}
+
+
+
+
+
+
+

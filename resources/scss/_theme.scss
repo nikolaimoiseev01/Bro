@@ -1,0 +1,354 @@
+// Variables
+@import 'variables';
+
+//region ↓ ↓ ↓ Общие элементы ↓ ↓ ↓
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    transition: all 2s ease-in-out;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    transition: all 2s ease-in-out;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $body-bg;
+    font-family: $p-font-family;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    max-width: 100dvw;
+    color: $color-grey-main;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    //overflow-x: hidden;
+    font-size: 18px;
+
+}
+
+p {
+    font-family: $p-font-family;
+    color: $color-grey-main;
+    letter-spacing: 0.1rem;
+    line-height: 1.8rem;
+    font-size: 18px;
+}
+
+h1 {
+    font-family: $h1-2-font-family;
+    font-size: 65px;
+    letter-spacing: 0.3rem;
+    display: inline-block;
+}
+
+h2 {
+    font-family: $h1-2-font-family;
+    font-size: 45px;
+    letter-spacing: 0.1rem;
+    line-height: 45px;
+    display: inline-block;
+}
+
+h3 {
+    font-family: $h3-font-family;
+    font-size: 45px;
+    letter-spacing: 0.3rem;
+    display: inline-block;
+    font-weight: 700;
+}
+
+input {
+    --tw-ring-shadow: 0 0 #000 !important;
+    --tw-ring-offset-width: 0 !important;
+}
+
+select {
+    color: $color-black-main;
+}
+
+.bx {
+    font-size: 30px;
+    color: $color-grey-main;
+    cursor: pointer;
+}
+
+.notyf__toast {
+    max-width: max-content !important;
+    border-radius: 6px !important;
+
+    .notyf__wrapper {
+        max-width: max-content;
+        padding: 10px 20px;
+    }
+}
+
+.link {
+    display: inline-block;
+    font-size: 18px;
+    letter-spacing: 0.1rem;
+    font-family: $h3-font-family;
+    text-decoration: none;
+    color: $color-grey-main;
+    transition: all .1s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    width: fit-content;
+
+    &.not-active {
+        color: $color-black-light;
+
+        &:hover {
+            color: $color-grey-main;
+        }
+    }
+
+    .spinner {
+        display: none;
+    }
+
+    &.loader.loading {
+        & > span {
+            display: none;
+        }
+
+        .spinner {
+            display: initial;
+        }
+    }
+
+    &.brown {
+        background: $color-brown;
+    }
+
+    &.button {
+        padding: 0.2rem 2rem;
+        border: 1px $color-grey-main solid;
+        border-radius: 8px;
+        background: $color-black-main;
+
+        &.shadow {
+            box-shadow: 0px 0px 7px 1px rgba(255, 255, 255, 0.71);
+            border: none;
+        }
+
+        &:hover {
+            background: $color-grey-main;
+            color: $color-black-main;
+        }
+    }
+
+    &.simple {
+        border: none;
+        padding: 0;
+        font-size: 20px;
+        line-height: 35px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            right: 100%;
+            height: 1px;
+            background: $color-grey-main;
+            transition: all .1s ease-in-out;
+            //transform: translateY(10px); // Смещаем полосу вниз
+        }
+
+        &:hover:after {
+            right: 0;
+        }
+    }
+
+    &.small {
+        color: $color-grey-light;
+        font-family: $p-font-family;
+        font-size: 16px;
+        letter-spacing: 2px;
+
+        &:hover {
+            color: $color-grey-main;
+        }
+    }
+}
+
+main.main_content_wrap:not(.main_page) {
+    margin-top: 80px;
+    flex: 1;
+
+    > .content {
+        padding-top: 40px;
+    }
+}
+
+.input_wrap {
+    @include flex(column, flex-start, flex-start, 4px)
+}
+
+.content {
+    width: 90%;
+    max-width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    @include flex(row, center, center, 4px);
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    padding: 20px 0;
+    background: $color-black-main;
+    border-bottom: 1px $color-grey-main solid;
+
+    &.hide {
+        top: -100px;
+        transition: .3s all ease-in-out;
+    }
+
+    &.show {
+        top: 0;
+        transition: .3s all ease-in-out;
+    }
+
+    .content {
+        @include flex(row, center, space-between, 4px);
+    }
+
+    .app_logo {
+        width: 100px;
+        height: auto;
+    }
+
+    .menu {
+        @include flex(row, center, center, 64px);
+    }
+
+    .link.active:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        right: 0;
+        height: 1px;
+        background: #F6F6F6;
+        transition: all 0.1s ease-in-out;
+    }
+
+}
+
+.account_menu_wrap {
+    a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        svg {
+            //fill: $color-black-light;
+            width: 30px;
+
+            path, rect, g {
+                fill: $color-black-light;
+                stroke: $color-black-light;
+            }
+        }
+
+        h3 {
+            font-size: 26px;
+            font-weight: 300;
+            color: $color-black-light;
+        }
+
+        &.active {
+            position: relative;
+
+            &:before {
+                position: absolute;
+                left: -15px;
+                content: '';
+                width: 5px;
+                height: 5px;
+                border-radius: 100%;
+                background: $color-grey-main;
+            }
+
+            h3, path, rect, g {
+                color: $color-grey-main;
+                fill: $color-grey-main;
+                stroke: $color-grey-main;
+            }
+        }
+
+        &:hover {
+            h3, path, rect, g {
+                color: $color-grey-main;
+                fill: $color-grey-main;
+                stroke: $color-grey-main;
+            }
+        }
+    }
+}
+
+/* Custom styles for range slider */
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 8px;
+    background: #d1d5db;
+    border-radius: 4px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: $color-black-main; /* Gray-900 */
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid $color-grey-main; /* Blue-500 */
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: #1f2937; /* Gray-900 */
+    cursor: pointer;
+    border-radius: 50%;
+
+}
+
+.ph {
+    font-size: 32px;
+}
+
+.app_logo {
+    &.white .white {
+        fill: $color-grey-main !important;
+    }
+}
+
+//endregion
