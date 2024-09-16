@@ -21,7 +21,7 @@ class TrackSeeder extends Seeder
             for ($i = 1; $i <= 4; $i++) {
 
                 $directory = public_path("/first_migrate/{$i}");
-                $files = scandir($directory . '\wav');
+                $files = scandir($directory . '/wav');
 
                 // Указываем путь к директории
                 $rand_covers_path = public_path('assets\fixed\random_covers');
