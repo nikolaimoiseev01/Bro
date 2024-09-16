@@ -24,7 +24,7 @@ class TrackSeeder extends Seeder
                 $files = scandir($directory . '/wav');
 
                 // Указываем путь к директории
-                $rand_covers_path = public_path('assets\fixed\random_covers');
+                $rand_covers_path = public_path('assets/fixed/random_covers');
                 $filesAndDirs = scandir($rand_covers_path);
                 $rand_cover_count = count($filesAndDirs) - 2;
 
