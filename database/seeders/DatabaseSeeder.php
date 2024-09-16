@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Мой первый трек',
             'user_id' => 1,
         ]);
-        $track->addMedia('D:\Work\Projects\BRO Label\Загружаем треки\Safty - 3am.mp3')->preservingOriginal()->usingFileName($track['id'] . '.mp3')->toMediaCollection('mp3');
+        $track->addMedia(public_path('/first_migrate/Safty - 3am.mp3'))->preservingOriginal()->usingFileName($track['id'] . '.mp3')->toMediaCollection('mp3');
 
         $track = Track::create([
             'title' => 'Мой второй трек',

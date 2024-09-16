@@ -30,7 +30,7 @@ class MixtapeSeeder extends Seeder
         ];
 
         for ($i = 1; $i <= 4; $i++) {
-            $cover_directory = "D:\Work\Projects\BRO Label\Загружаем треки\\{$i}\\cover.png";
+            $cover_directory = public_path("/first_migrate\\{$i}\\cover.png");
             $mixtape = Mixtape::create([
                 'title' => 'Mixtape ' . $i,
                 'mixtape_status_id' => 99,
@@ -47,6 +47,6 @@ class MixtapeSeeder extends Seeder
             'price' => 300
         ]);
 
-        $mixtape->addMedia('D:\Work\Projects\BRO Label\Загружаем треки\Mixtape 5 Cover.png')->preservingOriginal()->toMediaCollection('cover');
+        $mixtape->addMedia(public_path('\first_migrate\Mixtape 5 Cover.png'))->preservingOriginal()->toMediaCollection('cover');
     }
 }
