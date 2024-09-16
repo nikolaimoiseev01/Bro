@@ -30,7 +30,7 @@ class MixtapeSeeder extends Seeder
         ];
 
         for ($i = 1; $i <= 4; $i++) {
-            $cover_directory = public_path("/first_migrate\\{$i}\\cover.png");
+            $cover_directory = public_path("/first_migrate/{$i}/cover.png");
             $mixtape = Mixtape::create([
                 'title' => 'Mixtape ' . $i,
                 'mixtape_status_id' => 99,
