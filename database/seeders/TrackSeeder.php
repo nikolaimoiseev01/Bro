@@ -35,8 +35,8 @@ class TrackSeeder extends Seeder
                         $author = $parts[0];
                         $title = str_replace('.wav', '', $parts[1]);
 
-                        $wav_path = $directory . "\\" . 'wav' . "\\" . $file;
-                        $mp3_path = $directory . "\\" . 'mp3' . "\\" . str_replace('.wav', '.mp3', $file);
+                        $wav_path = $directory . "/" . 'wav' . "/" . $file;
+                        $mp3_path = $directory . "/" . 'mp3' . "/" . str_replace('.wav', '.mp3', $file);
 
                         if (file_exists($mp3_path)) {
 
