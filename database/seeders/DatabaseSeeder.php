@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Мой второй трек',
             'user_id' => 1,
         ]);
-        $track->addMedia(public_path('/first_migrate/Yung Ghoty feat. AUTOGUN - Лавина.mp3')->preservingOriginal()->usingFileName($track['id'] . '.mp3')->toMediaCollection('mp3');
+        $track->addMedia(public_path('/first_migrate/Yung Ghoty feat. AUTOGUN - Лавина.mp3'))->preservingOriginal()->usingFileName($track['id'] . '.mp3')->toMediaCollection('mp3');
 
 
 
