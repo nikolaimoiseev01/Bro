@@ -17,7 +17,7 @@
 
     @stack('styles')
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/scss/portal.scss', 'resources/js/app.js'])
 </head>
 <body class="antialiased">
     <livewire:components.header />

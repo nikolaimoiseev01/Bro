@@ -12,5 +12,10 @@
     "css": [
       "assets/app-Dqq_84QC.css"
     ]
+  },
+  "resources/scss/portal.scss": {
+    "file": "assets/portal-Bci338DE.css",
+    "src": "resources/scss/portal.scss",
+    "isEntry": true
   }
 }
