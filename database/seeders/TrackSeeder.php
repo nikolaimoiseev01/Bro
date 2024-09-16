@@ -55,7 +55,7 @@ class TrackSeeder extends Seeder
                             $random_cover_id = rand(1, $rand_cover_count);
                             $track->addMedia($wav_path)->usingFileName($track['id'] . '.wav')->preservingOriginal()->toMediaCollection('wav');
                             $track->addMedia($mp3_path)->usingFileName($track['id'] . '.mp3')->preservingOriginal()->toMediaCollection('mp3');
-                            $track->addMedia("{$rand_covers_path}\\{$random_cover_id}.jpeg")->preservingOriginal()->toMediaCollection('cover');
+                            $track->addMedia("{$rand_covers_path}/{$random_cover_id}.jpeg")->preservingOriginal()->toMediaCollection('cover');
 
                         } else {
                             dd('ПРОБЛЕМА: МИКС: ' . $i . ' ТРЕК: ' . $file);
@@ -74,7 +74,7 @@ class TrackSeeder extends Seeder
                 for ($i = 1; $i <= 10; $i++) {
                     for ($j = 1; $j <= rand(1,5); $j++) {
                         $rand = rand(1, 3);
-                        $file = $directory . "\\{$rand}.mp3";
+                        $file = $directory . "/{$rand}.mp3";
                         $track = Track::create([
                             'title' => $track_names[$rand - 1],
                             'user_id' => $i,
