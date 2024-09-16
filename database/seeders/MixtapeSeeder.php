@@ -47,6 +47,6 @@ class MixtapeSeeder extends Seeder
             'price' => 300
         ]);
 
-        $mixtape->addMedia(public_path('\first_migrate\Mixtape 5 Cover.png'))->preservingOriginal()->toMediaCollection('cover');
+        $mixtape->addMedia(public_path('/first_migrate/Mixtape 5 Cover.png'))->preservingOriginal()->toMediaCollection('cover');
     }
 }

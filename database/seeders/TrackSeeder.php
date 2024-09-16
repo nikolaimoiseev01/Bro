@@ -20,7 +20,7 @@ class TrackSeeder extends Seeder
 
             for ($i = 1; $i <= 4; $i++) {
 
-                $directory = public_path("/first_migrate\\{$i}");
+                $directory = public_path("/first_migrate/{$i}");
                 $files = scandir($directory . '\wav');
 
                 // Указываем путь к директории
@@ -65,7 +65,7 @@ class TrackSeeder extends Seeder
             }
 
             DB::transaction(function () { // Чтобы не записать ненужного
-                $directory = public_path('\first_migrate\Рандомные треки');
+                $directory = public_path('/first_migrate/Рандомные треки');
                 $track_names = [
                     'BMW',
                     'Шансон',
