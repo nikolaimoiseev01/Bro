@@ -1,6 +1,6 @@
 import './bootstrap';
 import WaveSurfer from "wavesurfer.js";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 import {Notyf} from "notyf";
 import 'notyf/notyf.min.css'; // for React, Vue and Svelte
 
